@@ -1,0 +1,14 @@
+	
+import wollok.game.*
+import juego.*
+import clases.*
+
+program dungeonPick {
+    game.title("dungeonPick")
+    game.width(16)
+    game.height(12)
+    game.boardGround("Mazmorra.png") 
+
+    juego.iniciar()
+    game.start()
+}

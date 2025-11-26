@@ -1,22 +1,37 @@
-# Nombre del juego (<- borrar y completar)
+# 🗡️ DUNGEON PICK ⚰️
 
-## Equipo de desarrollo
+## 🧛‍♂️🧛🏻‍♂️ Equipo de desarrollo
 
-- Alguien
-- Persona
-- etc.
+- Thiago Daniel Ribe 
+- Alejo Matias Villafañe Cortez
 
-## Capturas
+## 🏰 Capturas
+Pantalla de Inicio
+![Pantalla Inicial](assets/Fondos/inicio.png)
 
-(agregar)
+Pantalla con Intrucciones
+![Pantalla con Intrucciones](assets/Fondos/instrucciones.png)
 
-## Reglas de Juego / Instrucciones
+Pantalla Mazmorra
+![Pantalla de la Mazmorra](assets/Fondos/Mazmorra.png)
 
-(Escribirlas)
+Pantalla De Victoria
+![Pantalla De Victoria](assets/Fondos/victoria.png)
+
+Pantalla De Derrota
+![Pantalla De Derrota](assets/Fondos/derrota.png)
 
 
-## Otros
+## 📜 Reglas de Juego / Instrucciones
 
-- Curso/Facultad
+Objetivo : Derrotar a esbirros y recoger sus objetos para luego vencer al Jefe.
+
+🕹️ Controles :
+* Movimientos : W(ARRIBA),A(IZQUIERDA),S(ABAJO),D(DERECHA)
+* Ataque/Agarrar Objeto : V
+
+## 💿 Otros
+
+- Programación Orientada a Objetos I - UNAHUR (Universidad Nacional de Hulingham)
 - Versión de wollok
 - Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
