@@ -222,3 +222,22 @@ object puertaNivel1 {
         juego.pasarANivel2()
     }
 }
+
+object barraVida {
+    
+    method position() = game.at(0, 10) 
+    method image() {
+        const vida = juego.personaje().vidaActual()
+        if (vida == 100) {
+            return "barra100.png"
+        } else if (vida >= 75) {
+            return "barra75.png"
+        } else if (vida >= 50) {
+            return "barra50.png"
+        } else if (vida >= 1) {
+            return "barra25.png"
+        } else {
+            return "barra0.png"
+        }
+    }
+}
