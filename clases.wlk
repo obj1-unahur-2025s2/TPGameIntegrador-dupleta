@@ -75,10 +75,33 @@ class Personaje {
 class Caballero inherits Personaje {
     const objetosEnMochila = []
       
-    method moverArriba() { position = position.up(1) }
-    method moverAbajo() { position = position.down(1) }
-    method moverDerecha() { position = position.right(1) }
-    method moverIzquierda() { position = position.left(1) }
+    method moverArriba() { 
+        const destino = position.up(1) 
+        if (self.esZonaCaminable(destino)) { 
+            position = destino 
+        }
+    }
+
+    method moverAbajo() { 
+        const destino = position.down(1)
+        if (self.esZonaCaminable(destino)) {
+            position = destino
+        }
+    }
+
+    method moverDerecha() { 
+        const destino = position.right(1)
+        if (self.esZonaCaminable(destino)) {
+            position = destino
+        }
+    }
+
+    method moverIzquierda() { 
+        const destino = position.left(1)
+        if (self.esZonaCaminable(destino)) {
+            position = destino
+        }
+    }
 
     method resetearEstado() {
         self.reiniciarVida()      
@@ -108,6 +131,15 @@ class Caballero inherits Personaje {
         game.say(self, "¡Equipado!")
     }
 
+    method esZonaCaminable(unaPosicion) {
+        const x = unaPosicion.x()
+        const y = unaPosicion.y()
+
+        const enPasilloVertical = x.between(5, 10) && y.between(1, 10)
+        const enPasilloHorizontal = x.between(1, 14) && y.between(4, 7)
+
+        return enPasilloVertical || enPasilloHorizontal
+    }
 
     override method vidaMaxima() {
         return super() + objetosEnMochila.sum({ o => o.saludQueAporta() })
@@ -214,11 +246,31 @@ object sangreDeVampiro {
     }
 }
 
-object puertaNivel1 {
-    method position() = game.at(8, 11)   
+class Puerta {
+    var property position
     method image() = "puerta.png"
+    
     method reaccionar(personaje) {
         game.say(personaje, "¡Avanzando!")
         juego.pasarANivel2()
+    }
+}
+
+object barraVida {
+    
+    method position() = game.at(0, 10) 
+    method image() {
+        const vida = juego.personaje().vidaActual()
+        if (vida == 100) {
+            return "barra100.png"
+        } else if (vida >= 75) {
+            return "barra75.png"
+        } else if (vida >= 50) {
+            return "barra50.png"
+        } else if (vida >= 1) {
+            return "barra25.png"
+        } else {
+            return "barra0.png"
+        }
     }
 }

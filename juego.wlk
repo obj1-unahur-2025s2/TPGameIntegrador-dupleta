@@ -5,11 +5,13 @@ import clases.*
 
 object juego {
     const personajePrincipal = new Caballero(
+        
         position = game.at(8, 2), 
         fuerzaInicial = 15,
         agilidadInicial = 10,
         puntosDeSaludInicial = 100
     )
+    method personaje() = personajePrincipal
 
     var estado = 0 
 
@@ -35,10 +37,12 @@ object juego {
 
    
     method comenzarJuego() {
-        game.addVisual(puertaNivel1)
+        game.addVisual(new Puerta(position = game.at(8, 10)))
+        game.addVisual(new Puerta(position = game.at(7, 10)))
 
         game.addVisual(personajePrincipal) 
-        
+        game.addVisual(barraVida)
+
         game.addVisual(new Lobo(
             position = game.at(2, 5), 
             fuerzaInicial=10, agilidadInicial=5, puntosDeSaludInicial=50
@@ -68,6 +72,7 @@ object juego {
         
         personajePrincipal.position(game.at(8, 1))
         game.addVisual(personajePrincipal)
+        game.addVisual(barraVida)
         
         game.addVisual(new VampiroJefe(
             position = game.at(8, 9),
