@@ -135,8 +135,8 @@ class Caballero inherits Personaje {
         const x = unaPosicion.x()
         const y = unaPosicion.y()
 
-        const enPasilloVertical = x.between(5, 10) && y.between(1, 10)
-        const enPasilloHorizontal = x.between(1, 14) && y.between(4, 7)
+        const enPasilloVertical = x.between(6, 9) && y.between(1, 10)
+        const enPasilloHorizontal = x.between(1, 14) && y.between(4, 6) 
 
         return enPasilloVertical || enPasilloHorizontal
     }

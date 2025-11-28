@@ -144,3 +144,9 @@ object pantallaVictoria {
     method position() = game.at(0,0)
     method image() = "victoria.png" 
     }
+
+
+
+
+
+
