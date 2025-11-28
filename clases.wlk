@@ -188,7 +188,7 @@ class Vampiro inherits Enemigo {
 }
 
 class VampiroJefe inherits Vampiro {
-  override method image() = "vampiro.png"
+  override method image() =  "jefeVampiro.png"
   
   override method morir() {
     game.removeVisual(self)
@@ -197,9 +197,11 @@ class VampiroJefe inherits Vampiro {
 }
 
 class GranEsqueleto inherits Esqueleto {
-  override method morir() {
-    game.removeVisual(self)
-    juego.ganar()
+    override method image() = "granEsqueleto.png"
+
+    override method morir() {
+     game.removeVisual(self)
+     juego.ganar()
   }
 }
 
