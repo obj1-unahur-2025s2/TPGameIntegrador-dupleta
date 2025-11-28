@@ -69,9 +69,6 @@ object juego {
         game.clear()
         
         game.boardGround("Mazmorra.png") 
-
-        game.addVisual(new Puerta(position = game.at(8, 10)))
-        game.addVisual(new Puerta(position = game.at(7, 10)))
         
         personajePrincipal.position(game.at(8, 1))
         game.addVisual(personajePrincipal)
@@ -96,21 +93,38 @@ object juego {
     }
 
     method habilitarPasoNivel3(posicion) {
-        game.say(personajePrincipal, "¡Se abre un camino de huesos!")
+        game.say(personajePrincipal, "¡Se ha abierto el camino!")
+        game.addVisual(new PuertaNivel3(position = posicion))
     }
     method pasarANivel3() {
         game.clear()
         game.boardGround("Mazmorra.png") 
+
         personajePrincipal.position(game.at(8, 1))
         game.addVisual(personajePrincipal)
         game.addVisual(barraVida)
+
         game.addVisual(new GranEsqueleto(
-            position = game.at(8, 8),
-           
-            fuerzaInicial = 50,      
-            agilidadInicial = 35,
-            puntosDeSaludInicial = 250 
+            position = game.at(7, 9), 
+            fuerzaInicial = 25,      
+            agilidadInicial = 15,     
+            puntosDeSaludInicial = 200 
         ))
+
+        game.addVisual(new Lobo(
+            position = game.at(3, 5),
+            fuerzaInicial = 15,
+            agilidadInicial = 8,
+            puntosDeSaludInicial = 80
+        ))
+
+        game.addVisual(new Vampiro(
+            position = game.at(13, 5),
+            fuerzaInicial = 20,
+            agilidadInicial = 22,
+            puntosDeSaludInicial = 80
+        ))
+
         self.configurarTeclasDelJuego()
     }
 
@@ -126,7 +140,16 @@ object juego {
     
     method perder() {
         game.say(personajePrincipal, "¡He perdido!")
-        game.schedule(2000, { game.stop() })
+        
+        game.schedule(2000, { 
+            game.clear()
+            
+            game.addVisual(pantallaDerrota)
+            
+            keyboard.enter().onPressDo { 
+                self.reiniciarJuego() 
+            }
+        })
     }
     method ganar() {
         game.clear()
@@ -168,7 +191,10 @@ object pantallaVictoria {
     }
 
 
-
+object pantallaDerrota {
+    method position() = game.at(0,0)
+    method image() = "derrota.png" // <--- Asegurate de tener esta imagen en assets
+}
 
 
 

@@ -6,19 +6,14 @@
 - Alejo Matias Villafañe Cortez
 
 ## 🏰 Capturas
-Pantalla de Inicio
 ![Pantalla Inicial](assets/Fondos/inicio.png)
 
-Pantalla con Intrucciones
 ![Pantalla con Intrucciones](assets/Fondos/instrucciones.png)
 
-Pantalla Mazmorra
 ![Pantalla de la Mazmorra](assets/Fondos/Mazmorra.png)
 
-Pantalla De Victoria
 ![Pantalla De Victoria](assets/Fondos/victoria.png)
 
-Pantalla De Derrota
 ![Pantalla De Derrota](assets/Fondos/derrota.png)
 
 
@@ -28,7 +23,8 @@ Objetivo : Derrotar a esbirros y recoger sus objetos para luego vencer al Jefe.
 
 🕹️ Controles :
 * Movimientos : W(ARRIBA),A(IZQUIERDA),S(ABAJO),D(DERECHA)
-* Ataque/Agarrar Objeto : V
+* Ataque : V
+* Agarrar Objeto : E
 
 ## 💿 Otros
 

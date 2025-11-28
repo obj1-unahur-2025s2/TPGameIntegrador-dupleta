@@ -282,3 +282,13 @@ object barraVida {
         }
     }
 }
+
+class PuertaNivel3 {
+    var property position
+    method image() = "puerta.png"
+
+    method reaccionar(personaje) {
+        game.say(personaje, "¡Hacia la batalla final!")
+        juego.pasarANivel3()
+    }
+}
