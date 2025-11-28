@@ -69,6 +69,9 @@ object juego {
         game.clear()
         
         game.boardGround("Mazmorra.png") 
+
+        game.addVisual(new Puerta(position = game.at(8, 10)))
+        game.addVisual(new Puerta(position = game.at(7, 10)))
         
         personajePrincipal.position(game.at(8, 1))
         game.addVisual(personajePrincipal)
@@ -89,6 +92,25 @@ object juego {
             fuerzaInicial=10, agilidadInicial=5, puntosDeSaludInicial=40
         ))
 
+        self.configurarTeclasDelJuego()
+    }
+
+    method habilitarPasoNivel3(posicion) {
+        game.say(personajePrincipal, "¡Se abre un camino de huesos!")
+    }
+    method pasarANivel3() {
+        game.clear()
+        game.boardGround("Mazmorra.png") 
+        personajePrincipal.position(game.at(8, 1))
+        game.addVisual(personajePrincipal)
+        game.addVisual(barraVida)
+        game.addVisual(new GranEsqueleto(
+            position = game.at(8, 8),
+           
+            fuerzaInicial = 50,      
+            agilidadInicial = 35,
+            puntosDeSaludInicial = 250 
+        ))
         self.configurarTeclasDelJuego()
     }
 

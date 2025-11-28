@@ -188,18 +188,26 @@ class Vampiro inherits Enemigo {
 }
 
 class VampiroJefe inherits Vampiro {
-    override method image() = "vampiro.png" 
-    override method morir() {
-        game.removeVisual(self) 
-        juego.ganar()
-    }
+  override method image() = "vampiro.png"
+  
+  override method morir() {
+    game.removeVisual(self)
+    juego.habilitarPasoNivel3(self.position())
+  }
+}
+
+class GranEsqueleto inherits Esqueleto {
+  override method morir() {
+    game.removeVisual(self)
+    juego.ganar()
+  }
 }
 
 object huesos {
     method fuerzaQueAporta() = 10
     method agilidadQueAporta() = 0
     method saludQueAporta() = 30
-    method image() = "hueso.png"             
+    method image() = "objHuesos.png"             
     var property position = game.at(0,0)     
 
     method dropearObjeto(posicion) {
@@ -216,7 +224,7 @@ object garras {
     method fuerzaQueAporta() = 30
     method agilidadQueAporta() = 10
     method saludQueAporta() = 0
-    method image() = "garras.png"             
+    method image() = "objgarras.png"             
     var property position = game.at(0,0)  
     
     method dropearObjeto(posicion) {
@@ -233,7 +241,7 @@ object sangreDeVampiro {
     method fuerzaQueAporta() = 0
     method agilidadQueAporta() = 30
     method saludQueAporta() = 10
-    method image() = "sangrevampiro.png"    
+    method image() = "objSangreVampiro.png"    
     var property position = game.at(0,0)     
 
     method dropearObjeto(posicion) {
